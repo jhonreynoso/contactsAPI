@@ -1,4 +1,4 @@
-﻿namespace ContactsApi;
+﻿namespace WebApi;
 
 public class WeatherForecast
 {

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Contacts\" />
+    <None Remove="Contacts\Commands\" />
+    <None Remove="Contacts\Queries\" />
+    <None Remove="Contacts\Commands\DeleteContact\" />
+    <None Remove="Contacts\Commands\UpdateContact\" />
+    <None Remove="Contacts\Commands\CreateContact\" />
+    <None Remove="Common\" />
+    <None Remove="Common\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contacts\" />
+    <Folder Include="Contacts\Commands\" />
+    <Folder Include="Contacts\Queries\" />
+    <Folder Include="Contacts\Commands\DeleteContact\" />
+    <Folder Include="Contacts\Commands\UpdateContact\" />
+    <Folder Include="Contacts\Commands\CreateContact\" />
+    <Folder Include="Common\" />
+    <Folder Include="Common\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
+    <PackageReference Include="MediatR" Version="12.4.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
